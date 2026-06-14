@@ -120,7 +120,6 @@
    });
 
    // Menggunakan Port Otomatis dari Cloud
-   const PORT = process.env.PORT || 8080;
-   app.listen(PORT, () => {
-       console.log(`Nar Proxxxy berjalan di port ${PORT}`);
-   });
+   // ✅ GANTI DENGAN KODE INI:
+module.exports = app;
+ 
