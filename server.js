@@ -6,7 +6,7 @@ const app = express();
 const unblocker = new Unblocker({prefix: '/proxy/'});
 app.use(unblocker);
 
-// Tampilan Antarmuka (UI) Web
+// Tampilan Antarmuka (UI) Web Nar Proxxxy
 app.get('/', (req, res) => {
     res.send(`
     <!DOCTYPE html>
@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nar Proxxxy - Global Server</title>
+        <title>Nar Proxxxy - Glitch Edition</title>
         <style>
             body { 
                 background-color: #0d1117; 
@@ -60,6 +60,62 @@ app.get('/', (req, res) => {
                 color: #fff; 
                 border-radius: 8px 0 0 8px; 
                 outline: none; 
+                font-size: 1rem; 
+            }
+            input[type="text"]::placeholder {
+                color: #484f58;
+            }
+            button { 
+                padding: 15px 25px; 
+                background: #00ffcc; 
+                color: #000; 
+                border: none; 
+                border-radius: 0 8px 8px 0; 
+                cursor: pointer; 
+                font-weight: bold; 
+                font-size: 1.1rem; 
+                transition: 0.3s; 
+            }
+            button:hover { 
+                background: #00cca3; 
+                box-shadow: 0 0 15px #00ffcc; 
+            }
+            .footer {
+                margin-top: 25px;
+                font-size: 0.8rem;
+                color: #484f58;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Nar Proxxxy</h1>
+            <p>⚡ High Speed Web Proxy ⚡</p>
+            <form onsubmit="event.preventDefault(); navigate();">
+                <input type="text" id="url" placeholder="Masukkan web (cth: google.com)" required>
+                <button type="submit">GO</button>
+            </form>
+            <div class="footer">Developed by KKnar • Hosted on Glitch</div>
+        </div>
+
+        <script>
+            function navigate() {
+                let url = document.getElementById('url').value;
+                if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                    url = 'https://' + url;
+                }
+                window.location.href = '/proxy/' + url;
+            }
+        </script>
+    </body>
+    </html>
+    `);
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Nar Proxxxy berjalan di port ${PORT}`);
+});
                 font-size: 1rem; 
             }
             input[type="text"]::placeholder {
