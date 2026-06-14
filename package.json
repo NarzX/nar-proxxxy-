@@ -1,10 +1,13 @@
 {
   "name": "nar-proxxxy",
   "version": "1.0.0",
-  "description": "Vercel Web Proxy by NarzX",
+  "description": "Web Proxy SG",
   "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
-    "express": "^4.18.2",
-    "unblocker": "*"
+    "express": "^4.19.2",
+    "unblocker": "^0.5.1"
   }
 }
